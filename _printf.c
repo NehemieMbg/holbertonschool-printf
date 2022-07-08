@@ -11,9 +11,13 @@ int _printf(const char *format, ...)
 	{
 	int (*pfunc)(va_list);
 	const char *p;
+
 	va_list lst;
+
 	register int count = 0;
+
 	va_start(lst, format);
+
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	for (p = format; *p; p++)
@@ -31,10 +35,9 @@ int _printf(const char *format, ...)
 				? pfunc(lst)
 				: _printf("%%%c", *p);
 		} else
-			count += _putchar(*p);}
+			count += _putchar(*p); }
 			_putchar(-1);
 			va_end(lst);
 				return (count);
 	}
 
-			
