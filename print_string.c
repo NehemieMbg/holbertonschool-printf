@@ -1,4 +1,4 @@
-#include "main.h"
+include "main.h"
 
 int _strlen(char *s) {
 	int i = -1;
@@ -12,22 +12,21 @@ int _strlen(char *s) {
 	return (i);
 }
 
-/**
- * _print_c - Prints characters
- * @lst: is the list
- */
 
+/**
+ * print_string - loops through a string and prints
+ * every character
+ * @lst: va_list arguments from _printf
+ * Return: number of char printed
+ */
 int print_string(va_list lst)
 {
-	char *s = va_arg(lst, char*);
-	int len;
+	int i = 0;
+	char *s = va_arg(lst, char *);
 
-	if(!s)
+	if (!s)
 		s = "(null)";
-
-	len = _strlen(s);
-
-	write(1, s, len);
-
-	return (len);
+	while (s[i])
+		_putchar(s[i++]);
+	return (i);
 }
