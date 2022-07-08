@@ -42,4 +42,5 @@ int _putchar(char c);
 int _puts(char *str);
 
 int _strcmp(const char *s1, const char *s2);
+
 #endif
