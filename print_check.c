@@ -1,61 +1,27 @@
 #include "main.h"
 
 /**
- * print_int - prints an integer
- * @lst: va_list of arguments from _printf
- * Return: number of char printed
+ * print_check - selects the right printing function
+ * depending on the conversion specifier passed to _printf 
+ * @s: character that holds the conversion specifier
+ * prt[] to find a match between the specifier passed to _printf
+ *and the first element of the struct, and then the approriate
+ * printing function
+ *Return: a pointer to the matching printing function
  */
 
-int print_int(va_list lst)
+int (*print_check(char s))(va_list)
 {
-  int n = va_arg(lst, int);
-  int res = count_digit(n);
-  if (n <= 0)
-    res++;
-  print_number(n);
-  return (res);
-}
-
-/**
- * print_number - helper function that loops through
- * an integer and prints all its digits
- * @n: integer to be printed
- */
-void print_number(int n)
-{
-  unsigned int n1;
-
-  if (n < 0)
-    {
-      _putchar('-');
-      n1 = -n;
-    }
-  else
-    n1 = n;
-
-  if (n1 / 10)
-    print_number(n1 / 10);
-  _putchar((n1 % 10) + '0');
-}
-/**
- * count_digit - returns the number of digits in an integer
- * for _printf
- * @i: integer to evaluate
- * Return: number of digits
- */
-int count_digit(int i)
-{
-  unsigned int d = 0;
-  unsigned int u;
-
-  if (i < 0)
-    u = i * -1;
-  else
-    u = i;
-  while (u != 0)
-    {
-      u /= 10;
-      d++;
-    }
-  return (d);
+	prt_f prt[] = {
+	        {'i', print_int},
+		{'c', print_char},
+		{'d', print_int},
+		{'s', print_string},
+		{'\0', NULL},
+	};
+	int i;
+	for (i = 0; i < 6; i++)
+	  if (prt[i].c == s)
+	    return (prt[i].f);
+	return (NULL);
 }
