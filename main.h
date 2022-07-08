@@ -27,14 +27,8 @@ int print_char(va_list lst);
 int print_string(va_list lst);
 
 /**
-<<<<<<< HEAD
 * print_num
 */
-=======
- * @brief 
- *
- */
->>>>>>> 0585634d2dc5cad62b4dd068cc24c4c27a85e543
 
 int print_int(va_list lst);
 void print_number(int n);
