@@ -13,7 +13,7 @@ int print_string(va_list lst);
 
 /**
  * @brief 
- * 
+ *
  */
 
 typedef struct print_function
