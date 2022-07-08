@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _printf - produces output according to a format
  * @format: format string containing the characters and the specifiers
@@ -7,8 +8,9 @@
  * specifiers contained into format
  * Return: length of the formatted output string
  */
+
 int _printf(const char *format, ...)
-	{
+{
 	int (*pfunc)(va_list);
 	const char *p;
 
@@ -39,5 +41,4 @@ int _printf(const char *format, ...)
 			_putchar(-1);
 			va_end(lst);
 				return (count);
-	}
-
+}
