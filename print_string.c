@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 
 int _strlen(char *s) {
 	int i = -1;
@@ -19,6 +19,7 @@ int _strlen(char *s) {
  * @lst: va_list arguments from _printf
  * Return: number of char printed
  */
+ 
 int print_string(va_list lst)
 {
 	int i = 0;
