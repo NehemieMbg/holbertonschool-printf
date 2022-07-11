@@ -26,7 +26,7 @@ int to_binary(va_list lst)
 	for (nb = b; nb; nb = nb / 2)
 		p++;
 
-	q = p + 1;
+	q = p;
 	while (p && total < b)
 	{
 		total *= 2;
