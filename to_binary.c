@@ -10,46 +10,41 @@
 
 int to_binary(va_list lst)
 {
-	long unsigned int b = va_arg(lst, long unsigned int);
-	unsigned int total = 2;
-	unsigned int nb;
-	unsigned int p = 0, q = 0;
+	unsigned int i, count, Num, binary;
+	unsigned int arr[32];
 
-	if (b == 0)
+	i = 0;
+	count = 0;
+	Num = va_arg(lst, int);
+	binary = 0;
+
+	if (Num < 1)
 	{
-		_putchar('0');
-		return (1);
+		_putchar(48);
+		count++;
+		return (count);
 	}
 
-	for (nb = b; nb; nb = nb / 2)
-		p++;
-
-	q = p;
-	while (p && total < b)
+	else
 	{
-		total *= 2;
-		p--;
-	}
-
-	if (total > b)
-	{
-		total /= 2;
-	}
-
-	nb = b;
-
-	while (total)
-	{
-		if (nb - total)
+		while (Num > 0)
 		{
-			_putchar('1');
-			nb -= total;
+			binary = Num % 2;
+			Num /= 2;
+			arr[count] = binary;
+			count++;
+		}
+	}
+
+		i = count - 1;
+
+		while (i > 0)
+		{
+			_putchar('0' + arr[i]);
+			i--;
 		}
 
-		else
-			_putchar('0');
+		_putchar('0' + arr[i]);
 
-		total /= 2;
-	}
-	return (q);
+	return (count);
 }
