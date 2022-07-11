@@ -34,7 +34,10 @@ int to_binary(va_list lst)
 	}
 
 	if (total > b)
+	{
 		total /= 2;
+		q--;
+	}
 
 	nb = b;
 
