@@ -1,6 +1,15 @@
 #include "main.h"
 
-int _strlen(char *s) {
+/**
+* _strlen - calcule the lenght of a string
+* @s: is the pointer that point to the first
+* char of a string
+*
+* Return: the lenght of the string
+*/
+
+int _strlen(char *s)
+{
 	int i = -1;
 
 	if (s)
@@ -19,7 +28,7 @@ int _strlen(char *s) {
  * @lst: va_list arguments from _printf
  * Return: number of char printed
  */
- 
+
 int print_string(va_list lst)
 {
 	int i = 0;
