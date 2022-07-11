@@ -13,12 +13,12 @@ int to_binary(va_list lst)
 	int b = va_arg(lst, long unsigned int);
 	int total = 2;
 	int nb;
-	int p = 0;
+	int p = 0, q = 0;
 
 	if (b == 0)
 	{
 		_putchar('0');
-		return (0);
+		return (1);
 	}
 	if (b < 0)
 		b = b * -1;
