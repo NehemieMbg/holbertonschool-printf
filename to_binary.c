@@ -11,17 +11,15 @@
 int to_binary(va_list lst)
 {
 	long unsigned int b = va_arg(lst, long unsigned int);
-	int total = 2;
-	int nb;
-	int p = 0, q = 0;
+	unsigned int total = 2;
+	unsigned int nb;
+	unsigned int p = 0, q = 0;
 
 	if (b == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-	if (b < 0)
-		b = b * -1;
 
 	for (nb = b; nb; nb = nb / 2)
 		p++;
@@ -42,7 +40,7 @@ int to_binary(va_list lst)
 
 	while (total)
 	{
-		if (nb - total >= 0)
+		if (nb - total)
 		{
 			_putchar('1');
 			nb -= total;
