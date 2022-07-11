@@ -29,7 +29,7 @@ int _putchar(char c)
 
 /**
  * _puts - prints a string to stdout
- * @str: pointer to the string to print
+ * @str: is the pointer to the string to print
  * Return: number of chars written
  */
 int _puts(char *str)
