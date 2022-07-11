@@ -10,7 +10,7 @@
 
 int to_binary(va_list lst)
 {
-	int b = va_arg(lst, long unsigned int);
+	int b = va_arg(lst, unsigned int);
 	int total = 2;
 	int nb;
 	int p = 0, q = 0;
@@ -36,7 +36,6 @@ int to_binary(va_list lst)
 	if (total > b)
 	{
 		total /= 2;
-		q--;
 	}
 
 	nb = b;
