@@ -10,7 +10,7 @@
 
 int to_binary(va_list lst)
 {
-	int b = va_arg(lst, unsigned int);
+	long unsigned int b = va_arg(lst, long unsigned int);
 	int total = 2;
 	int nb;
 	int p = 0, q = 0;
