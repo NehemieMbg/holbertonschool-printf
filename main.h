@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 /*	Functions needed to make _printf work correctly */
 
@@ -18,6 +19,8 @@ int count_digit(int i);
 int _putchar(char c);
 int _puts(char *str);
 int _strcmp(const char *s1, const char *s2);
+int to_binary(va_list arg);
+
 
 
 /*	Structure & alias name for print_function */
@@ -36,3 +39,4 @@ typedef struct print_function
 } prt_f;
 
 #endif
+
